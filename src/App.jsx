@@ -37,7 +37,7 @@ const App = () => {
         }
     }, [contacts]);
 
-    const addContact = useCallback((data) => {
+    const addContact = (data) => {
         const duplicate = contacts.find(contact => contact.name === data.name);
         if (duplicate) {
             alert(`${data.name} is already in contacts.`);
@@ -54,7 +54,7 @@ const App = () => {
 
             return [...prevContacts, newContact];
         });
-    }, [setContacts]);
+    };
 
     const deleteContact = useCallback((id) => {
         setContacts(prevContacts => prevContacts.filter(contact => contact.id !== id));
