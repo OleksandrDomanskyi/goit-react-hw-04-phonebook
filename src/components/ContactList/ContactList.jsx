@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './contact-list.module.scss'
@@ -27,4 +28,4 @@ ContactList.propTypes = {
     deleteContact: PropTypes.func.isRequired,
 };
 
-export default ContactList;
+export default memo(ContactList);
